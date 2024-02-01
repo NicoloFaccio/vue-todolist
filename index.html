@@ -6,14 +6,14 @@
     <title>Todolist</title>
     <!-- FONTAWESOME'S LINK -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <!-- BOOTSRAP'S LINK-->
+    <!-- BOOTSTRAP'S LINK-->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <!-- CSS'S LINK -->
     <link rel="stylesheet" href="./assets/CSS/main.css">
 </head>
 <body>
     <div id="app">
-        <h1 class="text-center">Todo List</h1>
+        <h1 class="text-center">Todolist</h1>
     
         <main class="container">
             <div class="row align-items-end">
@@ -26,7 +26,7 @@
                         id="task"
                         aria-describedby="new task"
                         placeholder="Nuova Attività da fare..."
-                        v-model="newTask"
+                        v-model="newTask.text"
                         @keyUp.enter="addTask"
                     />
                 </div>
@@ -45,7 +45,7 @@
                         :key="index"
                         class="d-flex justify-content-between border-bottom mt-3">
                         <p class="text-capitalize">
-                            {{ element }}
+                            {{ element.text }}
                         </p>
                         <span>
                             <i @click="removeTask(index)" class="fa-solid fa-xmark text-danger"></i>
