@@ -46,6 +46,10 @@ createApp({
     methods: {
         addTask() {
 
+            const task = {
+                ...this.newTask
+            }
+
             if( this.newTask !== '' ){
                 this.tasks.unshift( this.newTask )
             }
@@ -54,6 +58,10 @@ createApp({
         },
         removeTask(index){
             this.tasks.splice( index, 1 )
+        },
+
+        lineCheck(index){
+            this.tasks[index].done = !this.tasks[index].done
         }
     }
 }).mount('#app')

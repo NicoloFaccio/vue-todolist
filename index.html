@@ -44,7 +44,9 @@
                         v-for="(element, index) in tasks"
                         :key="index"
                         class="d-flex justify-content-between border-bottom mt-3">
-                        <p class="text-capitalize">
+                        <p class="text-capitalize"
+                           :class="{'text-decoration-line-through': element.done}"
+                           @click="lineCheck(index)">
                             {{ element.text }}
                         </p>
                         <span>
